@@ -69,7 +69,7 @@ if __name__ == "__main__":
         dataset,
         batch_size=opt.batch_size,
         shuffle=True,
-        num_workers=opt.n_cpu,
+        num_workers=0,  # opt.n_cpu,  # insufficient shared memory ERROR, set 0 when train in docker!
         pin_memory=True,
         collate_fn=dataset.collate_fn,
     )

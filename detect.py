@@ -56,7 +56,7 @@ if __name__ == "__main__":
         ImageFolder(opt.image_folder, img_size=opt.img_size),
         batch_size=opt.batch_size,
         shuffle=False,
-        num_workers=opt.n_cpu,
+        num_workers=0,  #opt.n_cpu,
     )
 
     classes = load_classes(opt.class_path)  # Extracts class labels from file
